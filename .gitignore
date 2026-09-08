@@ -1,0 +1,36 @@
+# Secrets — never commit these
+.env
+.env.*
+*.pem
+*.key
+
+# Databases (local dev data, not meant to be version-controlled)
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Editor/OS cruft
+.vscode/
+.idea/
+.DS_Store
+
+# Note: .github/ and tests/ are intentionally NOT listed here.
+# They must stay tracked by git — .github/workflows is how GitHub
+# Actions finds the CI/CD pipeline, and tests/ is what the pipeline
+# runs. (They ARE correctly excluded from .dockerignore instead, since
+# the built container doesn't need either at runtime — different file,
+# different purpose.)
